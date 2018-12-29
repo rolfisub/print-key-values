@@ -1,24 +1,29 @@
 {
-    "name": "rolfisub/print-key-values",
-    "description": "A function to print key values to stdout.",
-    "keywords": ["template", "composer", "package"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Rolf Bansbach",
-            "email": "rolfisub@gmail.com"
-        }
-    ],
-    "type": "project",
-    "require": {
-		"php": ">=7.1"
-    },
-    "require-dev": {
-		"phpunit/phpunit": "6.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "Rolfisub\\PrintKeyValues\\": "src/"
-        }
+  "name": "rolfisub/print-key-value",
+  "description": "A function to print key values to stdout.",
+  "keywords": [
+    "print key value",
+    "var_dump",
+    "stdout",
+    "package"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Rolf Bansbach",
+      "email": "rolfisub@gmail.com"
     }
+  ],
+  "type": "library",
+  "require": {
+    "php": ">=7.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "6.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Rolfisub\\PrintKeyValue\\": "src/"
+    }
+  }
 }
