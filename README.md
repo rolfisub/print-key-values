@@ -1,15 +1,47 @@
-Composer Library Template
+Key Value Print Class
 =========================
 
-If you are trying to create a new PHP Composer library, whether it will be going to submitted to packagist.org or just in your Github account, this template of files will surely help you make the process a lot easier and faster.
+To install run:
+<code>composer require rolfisub/print-key-value </code>
 
-Features
---------
+To use in your php file
+<pre>
 
-* PSR-4 autoloading compliant structure
-* Unit-Testing with PHPUnit
-* Comprehensive Guides and tutorial
-* Easy to use to any framework or even a plain php file
+use Rolfisub/PrintKeyValue/PrintKeyValue;
 
+$pkv = new PrintKeyValue();
 
-I encourage that you put more information on this readme file instead of leaving it as is. See [How to make a README file](http://www.darwinbiler.com/designing-and-making-the-readme-file-for-your-github-repository/) for more info.
+echo $pkv->printKeyValues([
+    1,
+    2,
+    3,
+    4,
+    "some"=>"array",
+        [
+        1,
+            [
+            "yey"=>"value"
+            ]
+        ]
+    ]
+);
+
+/*this will output:
+
+0:1
+1:2
+2:3
+3:4
+some:array
+{
+ 0:1
+ {
+  yey:value
+ }
+}
+
+</pre>
+
+Output can be customized using the constructor parameters. Please check the class constructor as a reference.
+
+Additionally you can call the clear() method to reset the output to "".
