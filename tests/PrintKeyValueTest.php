@@ -1,7 +1,7 @@
 <?php
-
+require "./src/PrintKeyValue.php";
 use PHPUnit\Framework\TestCase;
-
+use Rolfisub\PrintKeyValue\PrintKeyValue;
 /**
  *  Corresponding Class to test YourClass class
  *
@@ -22,22 +22,18 @@ class PrintKeyValueTest extends TestCase
      */
     public function testIsThereAnySyntaxError()
     {
-        $var = new Buonzz\Template\YourClass;
+        $var = new PrintKeyValue();
         $this->assertTrue(is_object($var));
         unset($var);
     }
 
     /**
-     * Just check if the YourClass has no syntax error
-     *
-     * This is just a simple check to make sure your library has no syntax error. This helps you troubleshoot
-     * any typo before you even use this library in a real project.
-     *
+     * testing that the return type of the method is string
      */
-    public function testMethod1()
-    {
-        $var = new Buonzz\Template\YourClass;
-        $this->assertTrue($var->method1("hey") == 'Hello World');
-        unset($var);
+    public function testIsString() {
+        $obj = new PrintKeyValue("","  ");
+        $out = $obj->printKeyValues([[1,[2,[4]],3]]);
+        $this->assertTrue(is_string($out));
     }
+
 }
