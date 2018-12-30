@@ -61,7 +61,7 @@ class PrintKeyValueTest extends TestCase
 
         //test 3
         $a3 = [1, [2]];
-        $ex3 = "0:1\n{\n 0:2\n}\n";
+        $ex3 = "0:1\n1:{\n 0:2\n}\n";
         $kvp->clear();
         $res3 = $kvp->printKeyValues($a3);
         $this->assertContains($ex3, $res3);
@@ -69,7 +69,7 @@ class PrintKeyValueTest extends TestCase
 
         //test 4
         $a4 = [1, 2, [3, [4]]];
-        $ex4 = "0:1\n1:2\n{\n 0:3\n {\n  0:4\n }\n}\n";
+        $ex4 = "0:1\n1:2\n2:{\n 0:3\n 1:{\n  0:4\n }\n}\n";
         $kvp->clear();
         $res4 = $kvp->printKeyValues($a4);
         $this->assertContains($ex4, $res4);
@@ -88,7 +88,7 @@ class PrintKeyValueTest extends TestCase
                 ]
             ]
         ];
-        $ex5 = "key:value\n0:5\n{\n another:keyvalue\n {\n  0:5\n  {\n   yes:no\n  }\n }\n}\n";
+        $ex5 = "key:value\n0:5\n1:{\n another:keyvalue\n 0:{\n  0:5\n  1:{\n   yes:no\n  }\n }\n}\n";
         $kvp->clear();
         $res5 = $kvp->printKeyValues($a5);
         $this->assertContains($ex5, $res5);

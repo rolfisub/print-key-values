@@ -77,7 +77,7 @@ class PrintKeyValue
             if (!is_array($value)) {
                 $this->printLn($key . $this->keyValMiddle . $value, $level);
             } else {
-                $this->printLn($this->openBracket, $level);
+                $this->printLn($key . $this->keyValMiddle . $this->openBracket, $level);
                 $level++;
                 $this->printKeyValues($value, $level);
                 $level--;
