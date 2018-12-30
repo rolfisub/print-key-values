@@ -17,14 +17,13 @@ echo $pkv->printKeyValues([
     3,
     4,
     "some"=>"array",
-        [
+    [
         1,
-            [
-                "yey"=>"value"
-            ]
+        [
+            "yey"=>"value"
         ]
     ]
-);
+]);
 
 /*this will output:
 
