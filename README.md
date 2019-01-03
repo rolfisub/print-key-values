@@ -1,11 +1,10 @@
 Key Value Print Class
 =========================
 
-To install run:
-<code>composer require rolfisub/print-key-value </code>
+To install run: ```composer require rolfisub/print-key-value```
 
 To use in your php file
-<pre>
+```php
 
 use Rolfisub/PrintKeyValue/PrintKeyValue;
 
@@ -39,7 +38,7 @@ some:array
  }
 }
 
-</pre>
+```
 
 Output can be customized using the constructor parameters. Please check the class constructor as a reference.
 
